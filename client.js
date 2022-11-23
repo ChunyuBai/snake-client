@@ -12,9 +12,12 @@ const connect = function () {
     // code that does something when the connection is first established
     console.log("hello! from client");
   });
+  conn.on("connect",() => {
+    conn.write("Name: CYB");
+  })
   return conn;
 };
 
 // console.log("Connecting ...");
-connect();
+// connect();
 module.exports = { connect };
