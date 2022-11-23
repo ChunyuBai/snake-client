@@ -12,9 +12,28 @@ const connect = function () {
     // code that does something when the connection is first established
     console.log("hello! from client");
   });
-  conn.on("connect",() => {
-    conn.write("Name: CYB");
-  })
+  // name my snake
+  // conn.on("connect",() => {
+  //   conn.write("Name: CYB");
+  // });
+  //move my snake
+  conn.on("connect", () => {    
+    setInterval(() => {
+      setTimeout(() => {
+        conn.write("Move: up");
+      },0)
+      setTimeout(() => {
+        conn.write("Move: left");
+      },50)
+      setTimeout(() => {
+        conn.write("Move: down");
+      },100)
+      setTimeout(() => {
+        conn.write("Move: right");
+      },150)
+    }, 150);
+  }) 
+
   return conn;
 };
 
