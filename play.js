@@ -1,5 +1,7 @@
 // const net = require("net");
 const {connect} = require("./client");
+const { setupInput } = require("./input");
+
 // // establishes a connection with the game server
 // const connect = function () {
 //   const conn = net.createConnection({
@@ -15,19 +17,19 @@ const {connect} = require("./client");
 //   });
 //   return conn;
 // };
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  const handleUserInput = (key) =>{
-    if (key === '\u0003') {
-      process.exit();
-    }
-  }
-  stdin.on("data", (data) => {handleUserInput(data)});
-  return stdin;
-};
+// const setupInput = function () {
+//   const stdin = process.stdin;
+//   stdin.setRawMode(true);
+//   stdin.setEncoding("utf8");
+//   stdin.resume();
+//   const handleUserInput = (key) =>{
+//     if (key === '\u0003') {
+//       process.exit();
+//     }
+//   }
+//   stdin.on("data", (data) => {handleUserInput(data)});
+//   return stdin;
+// };
 
 console.log("Connecting ...");
 connect();
