@@ -17,22 +17,22 @@ const connect = function () {
   //   conn.write("Name: CYB");
   // });
   //move my snake
-  conn.on("connect", () => {    
-    setInterval(() => {
-      setTimeout(() => {
-        conn.write("Move: up");
-      },0)
-      setTimeout(() => {
-        conn.write("Move: left");
-      },50)
-      setTimeout(() => {
-        conn.write("Move: down");
-      },100)
-      setTimeout(() => {
-        conn.write("Move: right");
-      },150)
-    }, 150);
-  }) 
+  // conn.on("connect", () => {    
+  //   setInterval(() => {
+  //     setTimeout(() => {
+  //       conn.write("Move: up");
+  //     },0)
+  //     setTimeout(() => {
+  //       conn.write("Move: left");
+  //     },500)
+  //     setTimeout(() => {
+  //       conn.write("Move: down");
+  //     },1000)
+  //     setTimeout(() => {
+  //       conn.write("Move: right");
+  //     },1500)
+  //   }, 1500);
+  // }) 
   return conn;
 };
 
